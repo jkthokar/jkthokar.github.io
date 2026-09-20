@@ -72,9 +72,9 @@
   }
   .brand{
     font-family:var(--serif); font-weight:600; font-size:19px; letter-spacing:0.2px;
-    text-decoration:none; color:var(--ink); white-space:nowrap;
+    text-decoration:none; color:var(--ink);
   }
-  nav.links{display:flex; gap:28px; flex-shrink:0;}
+  nav.links{display:flex; gap:28px;}
   nav.links a{
     color:var(--ink-soft); text-decoration:none; font-size:15px;
   }
@@ -83,8 +83,7 @@
   /* ---------- Hero ---------- */
   .hero{padding:76px 0 64px; position:relative;}
   .hero-grid{
-    display:grid; grid-template-columns:minmax(0,640px) 1fr; gap:48px; align-items:center;
-    padding-left:max(28px, calc((100vw - 920px)/2 + 28px));
+    display:grid; grid-template-columns:1.35fr 1fr; gap:48px; align-items:center;
   }
   .hero h1{
     font-family:var(--serif);
@@ -122,8 +121,6 @@
     position:relative; aspect-ratio:1/1; border:1px solid var(--line);
     background:var(--paper-dim);
     display:flex; align-items:center; justify-content:center;
-    justify-self:end; width:min(560px,100%); margin-right:0;
-    overflow:hidden;
   }
   .frame::before,.frame::after,
   .frame b::before,.frame b::after{
@@ -200,12 +197,8 @@
   .fine{font-family:var(--mono); font-size:12px; color:var(--ink-soft); margin-top:48px; text-align:center;}
 
   @media (max-width:720px){
-    header.site .wrap{height:auto; flex-wrap:wrap; gap:8px 16px; padding:14px 20px;}
-    .brand{font-size:17px;}
-    nav.links{gap:16px;}
-    nav.links a{font-size:13.5px;}
-    .hero-grid{grid-template-columns:1fr; padding-left:20px; padding-right:20px;}
-    .frame{max-width:260px; margin:0 auto; justify-self:auto; width:100%;}
+    .hero-grid{grid-template-columns:1fr;}
+    .frame{max-width:260px; margin:0 auto;}
     .project{grid-template-columns:1fr; gap:6px;}
     .skill-groups{grid-template-columns:1fr 1fr;}
     .contact-grid{flex-direction:column; align-items:flex-start;}
@@ -229,7 +222,7 @@
 </header>
 
 <main id="top">
-  <section class="hero" style="border-top:none;">
+  <section class="hero wrap" style="border-top:none;">
     <div class="hero-grid">
       <div>
         <p class="role">AI &amp; Machine Learning · Kyungdong University Global</p>
@@ -242,7 +235,7 @@
       </div>
       <div class="frame">
         <b></b>
-       <img src="jay.jpg" alt="Jay Kumar Tamang" style="width:100%;height:100%;object-fit:cover;">
+       <img src="jay.jpg" alt="Jay Kumar Tamang" style="width:100%;height:130%;object-fit:cover;">
       </div>
     </div>
   </section>
