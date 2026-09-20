@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jay Kumar Tamang — AI &amp; Machine Learning</title>
+<meta name="description" content="Jay Kumar Tamang is an AI & Machine Learning student at Kyungdong University Global, building applied deep learning systems — from facial recognition to gesture-based interfaces.">
+<meta name="author" content="Jay Kumar Tamang">
+
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Jay Kumar Tamang — AI & Machine Learning">
+<meta property="og:description" content="AI & Machine Learning student at Kyungdong University Global. Applied deep learning, computer vision, and full-stack builds.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Jay Kumar Tamang",
+  "jobTitle": "AI & Machine Learning Student",
+  "affiliation": {
+    "@type": "CollegeOrUniversity",
+    "name": "Kyungdong University Global"
+  },
+  "knowsAbout": ["Deep Learning", "Computer Vision", "Machine Learning", "Python", "Web Development"]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --paper:#F1F2ED;
+    --paper-dim:#E7E9E2;
+    --ink:#171B18;
+    --ink-soft:#4B534C;
+    --line:#CBD0C5;
+    --accent:#1F5E52;
+    --accent-bright:#2E8C79;
+    --mark:#E4EFE2;
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'IBM Plex Sans', -apple-system, sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent);}
+  a:hover{color:var(--accent-bright);}
+  ::selection{background:var(--mark);}
+
+  .wrap{max-width:920px; margin:0 auto; padding:0 28px;}
+
+  /* ---------- Nav ---------- */
+  header.site{
+    position:sticky; top:0; z-index:10;
+    background:rgba(241,242,237,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  header.site .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height:64px;
+  }
+  .brand{
+    font-family:var(--serif); font-weight:600; font-size:19px; letter-spacing:0.2px;
+    text-decoration:none; color:var(--ink);
+  }
+  nav.links{display:flex; gap:28px;}
+  nav.links a{
+    color:var(--ink-soft); text-decoration:none; font-size:15px;
+  }
+  nav.links a:hover{color:var(--accent);}
+
+  /* ---------- Hero ---------- */
+  .hero{padding:76px 0 64px; position:relative;}
+  .hero-grid{
+    display:grid; grid-template-columns:1.35fr 1fr; gap:48px; align-items:center;
+  }
+  .hero h1{
+    font-family:var(--serif);
+    font-weight:500;
+    font-optical-sizing:auto;
+    font-variation-settings:'opsz' 72;
+    font-size:clamp(40px,6vw,64px);
+    line-height:1.04;
+    letter-spacing:-0.01em;
+    text-rendering:optimizeLegibility;
+    margin:0 0 18px;
+  }
+  .hero .role{
+    font-family:var(--mono);
+    font-size:14px;
+    color:var(--accent);
+    margin:0 0 22px;
+  }
+  .hero p.lede{
+    font-size:18px; color:var(--ink-soft); max-width:46ch; margin:0 0 28px;
+  }
+  .cta-row{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:11px 20px; border-radius:2px;
+    font-size:15px; text-decoration:none; border:1px solid var(--ink);
+  }
+  .btn.primary{background:var(--ink); color:var(--paper);}
+  .btn.primary:hover{background:var(--accent); border-color:var(--accent); color:var(--paper);}
+  .btn.ghost{border-color:var(--line); color:var(--ink);}
+  .btn.ghost:hover{border-color:var(--ink);}
+
+  /* viewfinder graphic */
+  .frame{
+    position:relative; aspect-ratio:1/1; border:1px solid var(--line);
+    background:var(--paper-dim);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .frame::before,.frame::after,
+  .frame b::before,.frame b::after{
+    content:""; position:absolute; width:22px; height:22px; border-color:var(--accent); border-style:solid; border-width:0;
+  }
+  .frame::before{top:-1px; left:-1px; border-top-width:2px; border-left-width:2px;}
+  .frame::after{top:-1px; right:-1px; border-top-width:2px; border-right-width:2px;}
+  .frame b{position:absolute; inset:0;}
+  .frame b::before{bottom:-1px; left:-1px; border-bottom-width:2px; border-left-width:2px;}
+  .frame b::after{bottom:-1px; right:-1px; border-bottom-width:2px; border-right-width:2px;}
+  .frame span{
+    font-family:var(--mono); font-size:13px; color:var(--ink-soft); text-align:center; padding:24px;
+  }
+
+  /* ---------- Sections ---------- */
+  section{padding:64px 0; border-top:1px solid var(--line);}
+  .section-head{display:flex; align-items:baseline; justify-content:space-between; margin-bottom:36px; gap:16px;}
+  .section-head h2{
+    font-family:var(--serif); font-weight:500; font-size:30px; margin:0;
+  }
+  .section-head .count{font-family:var(--mono); font-size:13px; color:var(--ink-soft);}
+
+  p.about{font-size:17px; max-width:68ch; color:var(--ink-soft);}
+  p.about strong{color:var(--ink); font-weight:600;}
+
+  /* ---------- Projects ---------- */
+  .project{
+    display:grid; grid-template-columns:120px 1fr; gap:24px;
+    padding:26px 0; border-top:1px solid var(--line);
+  }
+  .project:first-of-type{border-top:none;}
+  .project .year{font-family:var(--mono); font-size:13px; color:var(--ink-soft); padding-top:3px;}
+  .project h3{margin:0 0 8px; font-size:19px; font-weight:600;}
+  .project p{margin:0 0 12px; color:var(--ink-soft); font-size:15.5px; max-width:60ch;}
+  .tags{display:flex; flex-wrap:wrap; gap:8px;}
+  .tag{
+    font-family:var(--mono); font-size:12px; color:var(--accent);
+    border:1px solid var(--line); padding:3px 9px; border-radius:2px;
+  }
+  .status{
+    font-size:13px; color:var(--accent); font-style:italic; margin-top:8px;
+  }
+
+  /* ---------- Now ---------- */
+  .now-box{
+    border:1px solid var(--line); background:var(--paper-dim);
+    padding:28px 30px; display:flex; align-items:flex-start; gap:18px;
+  }
+  .now-dot{
+    width:9px; height:9px; border-radius:50%; background:var(--accent-bright);
+    margin-top:8px; flex-shrink:0;
+    box-shadow:0 0 0 4px rgba(46,140,121,0.15);
+  }
+  .now-box p{margin:0; color:var(--ink-soft); font-size:15.5px;}
+  .now-box strong{color:var(--ink);}
+
+  /* ---------- Skills ---------- */
+  .skill-groups{display:grid; grid-template-columns:repeat(3,1fr); gap:28px;}
+  .skill-groups h4{
+    font-family:var(--mono); font-size:12.5px; font-weight:500; color:var(--ink-soft);
+    margin:0 0 12px;
+  }
+  .skill-groups ul{list-style:none; margin:0; padding:0;}
+  .skill-groups li{font-size:15px; padding:5px 0; border-top:1px solid var(--line);}
+  .skill-groups li:first-child{border-top:none;}
+
+  /* ---------- Footer / Contact ---------- */
+  footer{padding:56px 0 72px;}
+  .contact-grid{display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:24px;}
+  footer h2{font-family:var(--serif); font-weight:500; font-size:30px; margin:0 0 10px;}
+  footer p{color:var(--ink-soft); max-width:42ch; margin:0;}
+  .contact-links{display:flex; flex-direction:column; gap:8px; text-align:right;}
+  .contact-links a{font-size:15px; text-decoration:none;}
+  .fine{font-family:var(--mono); font-size:12px; color:var(--ink-soft); margin-top:48px; text-align:center;}
+
+  @media (max-width:720px){
+    .hero-grid{grid-template-columns:1fr;}
+    .frame{max-width:260px; margin:0 auto;}
+    .project{grid-template-columns:1fr; gap:6px;}
+    .skill-groups{grid-template-columns:1fr 1fr;}
+    .contact-grid{flex-direction:column; align-items:flex-start;}
+    .contact-links{text-align:left;}
+  }
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top">Jay Kumar Tamang</a>
+    <nav class="links">
+      <a href="#projects">Projects</a>
+      <a href="#now">Now</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero wrap" style="border-top:none;">
+    <div class="hero-grid">
+      <div>
+        <p class="role">AI &amp; Machine Learning · Kyungdong University Global</p>
+        <h1>Jay Kumar<br>Tamang</h1>
+        <p class="lede">I study how machines learn to see and respond — building applied deep learning systems, from facial recognition to gesture-based interfaces, mostly with a small team and a faculty advisor looking over my shoulder.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="#projects">See the work</a>
+          <a class="btn ghost" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <div class="frame">
+        <b></b>
+        <span>Department of<br>Artificial Intelligence<br>KDU</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head"><h2>About</h2></div>
+      <p class="about">
+        I'm a student in the <strong>Department of Artificial Intelligence at Kyungdong University Global (KDU)</strong>,
+        where my work sits mostly in applied deep learning and computer vision — usually as part of a supervised group project,
+        occasionally as something I take further on my own. I like problems where a model has to deal with messy, real input:
+        a face under bad lighting, a hand moving mid-air, a sentence full of slang. Outside of coursework, I also build and ship
+        small production websites, most recently a full inventory and stock-tracking system for a company, wired up end to end
+        with authentication and a live database.
+      </p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Projects</h2>
+        <span class="count">05</span>
+      </div>
+
+      <div class="project">
+        <div class="year">2026</div>
+        <div>
+          <h3>Smart Attendance System v2.0</h3>
+          <p>A dual-mode facial recognition attendance system combining VGG-Face and MTCNN, built as the Deep Learning midterm project for Group 11.</p>
+          <div class="tags">
+            <span class="tag">CNN</span>
+            <span class="tag">VGG-Face</span>
+            <span class="tag">MTCNN</span>
+            <span class="tag">Python</span>
+          </div>
+          <p class="status">Currently being assessed for publication — targeting a paper with a larger dataset, ablation study, and formal ethics section.</p>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="year">2026</div>
+        <div>
+          <h3>Real-Time Virtual Air Writing System</h3>
+          <p>A webcam-based system that turns hand movement into on-screen writing, using hand-landmark tracking to read gestures in real time.</p>
+          <div class="tags">
+            <span class="tag">MediaPipe</span>
+            <span class="tag">OpenCV</span>
+            <span class="tag">Python</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="year">2026</div>
+        <div>
+          <h3>WellmadeWellness — inventory &amp; brands platform</h3>
+          <p>A production website for a wellness company: pages that track stock bought, used, and sold across 10+ brands, backed by a shared Firestore database with authenticated sign-in.</p>
+          <div class="tags">
+            <span class="tag">Firebase</span>
+            <span class="tag">Firestore</span>
+            <span class="tag">Auth</span>
+            <span class="tag">GitHub Pages</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="year">2026</div>
+        <div>
+          <h3>Smart Blind Stick</h3>
+          <p>An Arduino-based assistive device for visually impaired users: three ultrasonic sensors for obstacle detection, a water sensor, dual vibration + buzzer feedback, and GPS-based SOS alerts sent over Telegram.</p>
+          <div class="tags">
+            <span class="tag">Arduino</span>
+            <span class="tag">GPS</span>
+            <span class="tag">IoT</span>
+            <span class="tag">Embedded C++</span>
+          </div>
+          <p class="status">Built with Prof. Nur Alam — journal paper, presentation, and demo video underway.</p>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="year">2025</div>
+        <div>
+          <h3>Personalized Recommendation Systems</h3>
+          <p>Coursework project on recommendation approaches, later reworked into a clearer presentation for the class.</p>
+          <div class="tags">
+            <span class="tag">ML</span>
+            <span class="tag">Recommenders</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="now">
+    <div class="wrap">
+      <div class="section-head"><h2>Now</h2></div>
+      <div class="now-box">
+        <span class="now-dot"></span>
+        <p><strong>Preparing for a software engineer interview</strong> — an entry-level, fresher-friendly role coming up soon. Open to hearing about similar opportunities in software or applied ML.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <div class="section-head"><h2>Skills &amp; tools</h2></div>
+      <div class="skill-groups">
+        <div>
+          <h4>Machine learning</h4>
+          <ul>
+            <li>Deep learning (CNNs)</li>
+            <li>Computer vision</li>
+            <li>NLP fundamentals</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Libraries &amp; models</h4>
+          <ul>
+            <li>OpenCV, MediaPipe</li>
+            <li>VGG-Face, MTCNN</li>
+            <li>BERT / RoBERTa, YOLOv8</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Engineering</h4>
+          <ul>
+            <li>Python, Google Colab</li>
+            <li>Firebase / Firestore</li>
+            <li>GitHub Pages</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <h2>Let's talk</h2>
+        <p>Open to software engineering roles, applied ML work, and collaboration on computer vision projects.</p>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:YOUR-EMAIL@example.com">YOUR-EMAIL@example.com</a>
+        <a href="https://github.com/jkthokar" target="_blank" rel="noopener">github.com/jkthokar</a>
+        <a href="#">linkedin.com/in/YOUR-LINKEDIN</a>
+      </div>
+    </div>
+    <p class="fine">Jay Kumar Tamang — Department of Artificial Intelligence, Kyungdong University Global</p>
+  </div>
+</footer>
+
+</body>
+</html>
