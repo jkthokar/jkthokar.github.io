@@ -162,6 +162,12 @@
     font-family:var(--mono); font-size:12px; color:var(--accent);
     border:1px solid var(--line); padding:3px 9px; border-radius:2px;
   }
+  .project h3 a{color:var(--ink); text-decoration:none; border-bottom:1px solid transparent; transition:border-color .15s, color .15s;}
+  .project h3 a:hover{color:var(--accent); border-bottom-color:var(--accent);}
+  .project h3 a .arr{font-family:var(--mono); font-size:14px; color:var(--accent); margin-left:6px;}
+  .links-row{display:flex; flex-wrap:wrap; gap:16px; margin-top:12px;}
+  .links-row a{font-family:var(--mono); font-size:13px; text-decoration:none; color:var(--accent);}
+  .links-row a:hover{text-decoration:underline;}
   .status{
     font-size:13px; color:var(--accent); font-style:italic; margin-top:8px;
   }
@@ -260,21 +266,39 @@
     <div class="wrap">
       <div class="section-head">
         <h2>Projects</h2>
-        <span class="count">05</span>
+        <span class="count">06 projects</span>
       </div>
 
       <div class="project">
         <div class="year">2026</div>
         <div>
-          <h3>Smart Attendance System v2.0</h3>
-          <p>A dual-mode facial recognition attendance system combining VGG-Face and MTCNN, built as the Deep Learning midterm project for Group 11.</p>
+          <h3><a href="https://github.com/jkthokar/smart-atm" target="_blank" rel="noopener">Smart ATM<span class="arr">↗</span></a></h3>
+          <p>Face-occlusion access control and tamper alarm for ATM booths: the machine unlocks only when the user's face is clearly visible, and a siren sounds when someone tries to break it. Fail-safe logic, a reproducible training pipeline, and CI-tested code.</p>
+          <div class="tags">
+            <span class="tag">MobileNetV2</span>
+            <span class="tag">OpenCV DNN</span>
+            <span class="tag">TensorFlow</span>
+            <span class="tag">ESP32</span>
+            <span class="tag">Python</span>
+          </div>
+          <div class="links-row"><a href="https://github.com/jkthokar/smart-atm" target="_blank" rel="noopener">GitHub ↗</a></div>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="year">2026</div>
+        <div>
+          <h3><a href="https://github.com/jkthokar/smart-attendance-system" target="_blank" rel="noopener">Smart Attendance System v3.0<span class="arr">↗</span></a></h3>
+          <p>A dual-mode face recognition attendance system (live webcam or a single group photo) using VGG-Face embeddings, MTCNN detection and an SVM classifier — 95.2% test accuracy. Built as the Deep Learning midterm project for Group 11.</p>
           <div class="tags">
             <span class="tag">CNN</span>
             <span class="tag">VGG-Face</span>
             <span class="tag">MTCNN</span>
+            <span class="tag">SVM</span>
             <span class="tag">Python</span>
           </div>
           <p class="status">Currently being assessed for publication — targeting a paper with a larger dataset, ablation study, and formal ethics section.</p>
+          <div class="links-row"><a href="https://github.com/jkthokar/smart-attendance-system" target="_blank" rel="noopener">GitHub ↗</a></div>
         </div>
       </div>
 
@@ -294,7 +318,7 @@
       <div class="project">
         <div class="year">2026</div>
         <div>
-          <h3>WellmadeWellness — inventory &amp; brands platform</h3>
+          <h3><a href="https://jkthokar.github.io/WellmadeWellness-Company-/" target="_blank" rel="noopener">WellmadeWellness — inventory &amp; brands platform<span class="arr">↗</span></a></h3>
           <p>A production website for a wellness company: pages that track stock bought, used, and sold across 10+ brands, backed by a shared Firestore database with authenticated sign-in.</p>
           <div class="tags">
             <span class="tag">Firebase</span>
@@ -302,13 +326,14 @@
             <span class="tag">Auth</span>
             <span class="tag">GitHub Pages</span>
           </div>
+          <div class="links-row"><a href="https://jkthokar.github.io/WellmadeWellness-Company-/" target="_blank" rel="noopener">Live site ↗</a><a href="https://github.com/jkthokar/WellmadeWellness-Company-" target="_blank" rel="noopener">GitHub ↗</a></div>
         </div>
       </div>
 
       <div class="project">
         <div class="year">2026</div>
         <div>
-          <h3>Smart Blind Stick</h3>
+          <h3><a href="https://github.com/jkthokar/smart-blind-stick" target="_blank" rel="noopener">Smart Blind Stick<span class="arr">↗</span></a></h3>
           <p>An Arduino-based assistive device for visually impaired users: three ultrasonic sensors for obstacle detection, a water sensor, dual vibration + buzzer feedback, and GPS-based SOS alerts sent over Telegram.</p>
           <div class="tags">
             <span class="tag">Arduino</span>
@@ -317,6 +342,7 @@
             <span class="tag">Embedded C++</span>
           </div>
           <p class="status">Built with Prof. Nur Alam — journal paper, presentation, and demo video underway.</p>
+          <div class="links-row"><a href="https://github.com/jkthokar/smart-blind-stick" target="_blank" rel="noopener">GitHub ↗</a></div>
         </div>
       </div>
 
@@ -340,7 +366,7 @@
       <div class="section-head"><h2>Now</h2></div>
       <div class="now-box">
         <span class="now-dot"></span>
-        <p><strong>Developing application software for WellmadeWellness Company.</p>
+        <p><strong>Developing application software for WellmadeWellness Company.</strong></p>
       </div>
     </div>
   </section>
