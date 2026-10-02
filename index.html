@@ -36,7 +36,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
   :root{
@@ -48,8 +48,8 @@
     --cobalt:#2D45D8;
     --cobalt-soft:#E6E9FB;
     --detect:#4F68FF;
-    --display:'Bodoni Moda', 'Didot', Georgia, serif;
-    --text:'Hanken Grotesk', -apple-system, 'Segoe UI', sans-serif;
+    --display:'Manrope', -apple-system, 'Segoe UI', sans-serif;
+    --text:'Manrope', -apple-system, 'Segoe UI', sans-serif;
     --gutter:clamp(20px, 5vw, 56px);
     --max:1160px;
   }
@@ -57,7 +57,7 @@
   html{scroll-behavior:smooth; -webkit-text-size-adjust:100%;}
   body{
     margin:0; background:var(--fog); color:var(--ink);
-    font-family:var(--text); font-size:17px; line-height:1.6;
+    font-family:var(--text); font-size:17px; line-height:1.65; overflow-x:clip;
     -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
   }
   img{display:block; max-width:100%;}
@@ -76,7 +76,7 @@
   }
   .nav.scrolled{border-bottom-color:var(--hairline);}
   .nav .wrap{display:flex; align-items:center; justify-content:space-between; height:68px; gap:20px;}
-  .brand{font-family:var(--display); font-size:21px; font-weight:500; text-decoration:none; white-space:nowrap; letter-spacing:-.005em;}
+  .brand{font-family:var(--display); font-size:18px; font-weight:700; text-decoration:none; white-space:nowrap; letter-spacing:-.02em;}
   .nav-links{display:flex; align-items:center; gap:32px; font-size:15px;}
   .nav-links a{text-decoration:none; color:var(--graphite);}
   .nav-links a:hover{color:var(--ink);}
@@ -89,12 +89,11 @@
   .hero-kicker{font-size:15px; color:var(--graphite); margin:0 0 28px;}
   .hero-kicker strong{color:var(--ink); font-weight:600;}
   .hero h1{
-    font-family:var(--display); font-weight:400;
-    font-size:clamp(56px, 10.5vw, 148px); line-height:.92; letter-spacing:-.035em;
+    font-family:var(--display); font-weight:800;
+    font-size:clamp(46px, 8.2vw, 118px); line-height:.96; letter-spacing:-.05em;
     margin:0 0 36px;
   }
   .hero h1 span{display:block;}
-  .hero h1 span + span{padding-left:.42em;}
   .lede{font-size:clamp(18px, 1.6vw, 21px); line-height:1.55; color:var(--graphite); max-width:34em; margin:0 0 36px;}
   .actions{display:flex; flex-wrap:wrap; gap:12px; align-items:center;}
   .btn{
@@ -124,24 +123,29 @@
     padding:5px 8px; white-space:nowrap; font-variant-numeric:tabular-nums;
   }
   .lm{position:absolute; width:7px; height:7px; margin:-3.5px 0 0 -3.5px; border-radius:50%; background:var(--detect); box-shadow:0 0 0 2px rgba(255,255,255,.85);}
-  .portrait figcaption{font-size:13.5px; color:var(--graphite); margin-top:14px; line-height:1.45;}
+  .portrait figcaption{font-size:13px; color:#8A8F99; margin-top:12px; line-height:1.4;}
   .portrait figcaption a{color:var(--ink); text-underline-offset:3px; text-decoration-color:var(--hairline);}
   .portrait figcaption a:hover{text-decoration-color:var(--ink);}
 
+  /* Overlay is hidden until the photo is hovered, focused or tapped */
+  .shot{cursor:crosshair;}
+  .det,.lm{opacity:0;}
+  .shot:hover .det,.shot:focus-visible .det,.shot.on .det,
+  .shot:hover .lm,.shot:focus-visible .lm,.shot.on .lm{opacity:1;}
   @media (prefers-reduced-motion: no-preference){
-    .det{animation:lock 1.1s cubic-bezier(.2,.7,.1,1) .5s both;}
-    .det-label{animation:appear .4s ease-out 1.45s both;}
-    .lm{animation:appear .35s ease-out both;}
-    .lm1{animation-delay:1.5s} .lm2{animation-delay:1.57s} .lm3{animation-delay:1.64s} .lm4{animation-delay:1.71s} .lm5{animation-delay:1.78s}
-    @keyframes lock{0%{opacity:0; transform:scale(1.9);} 60%{opacity:1;} 100%{opacity:1; transform:scale(1);}}
-    @keyframes appear{from{opacity:0;} to{opacity:1;}}
+    .det{transform:scale(1.6); transition:opacity .25s ease, transform .55s cubic-bezier(.2,.7,.1,1);}
+    .shot:hover .det,.shot:focus-visible .det,.shot.on .det{transform:scale(1);}
+    .lm{transition:opacity .25s ease;}
+    .shot:hover .lm,.shot:focus-visible .lm,.shot.on .lm{transition-delay:.35s;}
   }
+  .hint-touch{display:none;}
+  @media (hover:none){ .hint-touch{display:inline;} .hint-mouse{display:none;} }
 
   /* ---------- Sections ---------- */
   .section{padding:clamp(72px, 10vw, 128px) 0; border-top:1px solid var(--hairline);}
   .section-title{
-    font-family:var(--display); font-weight:400; letter-spacing:-.02em;
-    font-size:clamp(40px, 5.4vw, 68px); line-height:1; margin:0;
+    font-family:var(--display); font-weight:700; letter-spacing:-.04em;
+    font-size:clamp(36px, 4.6vw, 60px); line-height:1; margin:0;
   }
   .split{display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr); gap:clamp(32px, 6vw, 96px);}
 
@@ -161,7 +165,7 @@
     padding:clamp(32px, 4vw, 48px) 0; border-top:1px solid var(--hairline);
   }
   .project:last-child{border-bottom:1px solid var(--hairline);}
-  .project-name{font-family:var(--display); font-weight:400; font-size:clamp(28px, 3vw, 38px); line-height:1.08; letter-spacing:-.015em; margin:0 0 12px;}
+  .project-name{font-family:var(--display); font-weight:700; font-size:clamp(24px, 2.4vw, 30px); line-height:1.15; letter-spacing:-.03em; margin:0 0 12px;}
   .project-name a{text-decoration:none; background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat; transition:background-size .3s ease;}
   .project-name a:hover{background-size:100% 1px;}
   .project-meta{font-size:14.5px; color:var(--graphite); margin:0;}
@@ -190,7 +194,7 @@
   .contact .section-title{color:var(--surface);}
   .contact-lede{color:#A9AEB8; max-width:30em; margin:22px 0 48px; font-size:18px;}
   .email{
-    font-family:var(--display); font-size:clamp(30px, 6vw, 80px); line-height:1.15; letter-spacing:-.025em;
+    font-family:var(--display); font-weight:700; font-size:clamp(28px, 5.6vw, 72px); line-height:1.15; letter-spacing:-.045em;
     color:var(--surface); text-decoration:none; overflow-wrap:anywhere;
     background:linear-gradient(var(--detect),var(--detect)) 0 100%/100% 2px no-repeat; padding-bottom:4px;
   }
@@ -215,7 +219,6 @@
     .brand{font-size:19px;}
     .nav-links{gap:20px; font-size:14.5px;}
     .nav-links .hide-sm{display:none;}
-    .hero h1 span + span{padding-left:0;}
     .facts{grid-template-columns:1fr;}
     .skills{grid-template-columns:1fr;}
     .btn{flex:1 1 auto;}
@@ -260,7 +263,7 @@
       </div>
 
       <figure class="portrait">
-        <div class="shot">
+        <div class="shot" id="shot" tabindex="0" role="button" aria-pressed="false" aria-label="Show face detection overlay">
           <img src="jay.jpg" alt="Portrait of Jay Kumar Tamang" width="1320" height="1625" fetchpriority="high">
           <div class="det" aria-hidden="true"><span class="det-label">face 0.99</span></div>
           <span class="lm lm1" style="left:44.5%;top:35.5%" aria-hidden="true"></span>
@@ -269,7 +272,7 @@
           <span class="lm lm4" style="left:46%;top:50.5%" aria-hidden="true"></span>
           <span class="lm lm5" style="left:62.5%;top:50.5%" aria-hidden="true"></span>
         </div>
-        <figcaption>A face box and five landmarks, the same MTCNN-style output behind my <a href="https://github.com/jkthokar/smart-attendance-system" target="_blank" rel="noopener">attendance system</a>.</figcaption>
+        <figcaption><span class="hint-mouse">Hover</span><span class="hint-touch">Tap</span> to see face detection</figcaption>
       </figure>
     </div>
   </section>
@@ -447,6 +450,10 @@
     var nav=document.getElementById('nav');
     function f(){ nav.classList.toggle('scrolled', window.scrollY>8); }
     window.addEventListener('scroll', f, {passive:true}); f();
+    var shot=document.getElementById('shot');
+    function t(){ var on=shot.classList.toggle('on'); shot.setAttribute('aria-pressed', on); }
+    shot.addEventListener('click', function(){ if(!window.matchMedia('(hover:hover)').matches) t(); });
+    shot.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); t(); } });
   })();
 </script>
 </body>
